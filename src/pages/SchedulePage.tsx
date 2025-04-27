@@ -61,7 +61,7 @@ const SchedulePage: React.FC = () => {
       <Header />
       
       <main className="flex-grow pt-24">
-        <section className="py-12 bg-ocean-view bg-cover bg-center text-white relative">
+        <section className="py-12  bg-cover bg-center text-white relative">
           <div className="absolute inset-0 bg-black bg-opacity-0"></div>
           <div className="container-custom relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Расписание круизов</h1>

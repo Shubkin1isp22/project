@@ -47,8 +47,8 @@ const ProfilePage: React.FC = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-ocean-view bg-cover bg-center h-40 relative">
-                <div className="absolute inset-0 bg-sea-blue-800 bg-opacity-70"></div>
+              <div className="bg-gray-400 bg-cover bg-center h-40 relative">
+                <div className="absolute inset-0  bg-opacity-70"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <div className="flex items-center">
                     <div className="bg-white p-3 rounded-full mr-4">

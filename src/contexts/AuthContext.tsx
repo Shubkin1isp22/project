@@ -21,7 +21,7 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => { //контекст AuthContext для хранения информации о пользователе и состояниях, таких как isAuthenticated.
   const [user, setUser] = useState<User | null>(() => {
     const savedUser = localStorage.getItem('user');
     return savedUser ? JSON.parse(savedUser) : null;
@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const isAuthenticated = !!user;
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string) => { //функция принимает email и пароль, а затем устанавливает пользователя в состояние и сохраняет его в localStorage
     // Симуляция успешного логина
     const mockUser = {
       id: '1',
@@ -41,7 +41,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(mockUser));
   };
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (name: string, email: string, password: string) => { //функция для регистрации, которая создает нового пользователя и сохраняет его данные
     
     // Симуляция успешной регистрации
     const mockUser = {
@@ -54,12 +54,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(mockUser));
   };
 
-  const logout = () => {
+  const logout = () => {   // функция очищает состояние пользователя и удаляет его из localStorage
     setUser(null);
     localStorage.removeItem('user');
   };
 
-  const updateUserInfo = (userData: Partial<User>) => {
+  const updateUserInfo = (userData: Partial<User>) => {  //обновляет данные пользователя
     if (user) {
       const updatedUser = { ...user, ...userData };
       setUser(updatedUser);

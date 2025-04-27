@@ -2,7 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CruiseCard from '../components/CruiseCard';
-import { useForm } from 'react-hook-form';
+import { useForm, FieldValues } from 'react-hook-form';
+import FormInput from '../components/FormInput';
 const HomePage: React.FC = () => {
   const cruiseOffers = [
     {
@@ -33,12 +34,11 @@ const HomePage: React.FC = () => {
       price: '145 000',
     },
   ];
-  const { register, handleSubmit, reset } = useForm<{ email: string }>();
+  const { register, handleSubmit, formState: { errors, isSubmitting }  } = useForm<FieldValues>();
 
-  const onSubmit = (data: { email: string }) => {
-    console.log('Email отправлен:', data.email);
-    reset(); // очищает форму после отправки
-  }
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -162,15 +162,29 @@ const HomePage: React.FC = () => {
                 Получайте информацию о скидках и эксклюзивных круизах первыми
               </p>
               <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-4">
-                <input
+                <FormInput
+                  label="Email"
+                  name="email"
                   type="email"
-                  placeholder="Ваш email"
-                  className="input-field flex-grow"
-                  {...register('email', { required: true })}
+                  register={register}
+                  errors={errors}
+                  validationRules={{
+                    required: 'Email обязателен',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'Неверный формат email'
+                    }
+                  }}
                 />
-                <button type="submit" className="btn btn-primary whitespace-nowrap">
-                  Подписаться
-                </button>
+                <div className="mt-6">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn btn-primary"
+                  >
+                    {isSubmitting ? 'Отправляем...' : 'Получать извещения'}
+                  </button>
+                </div>
               </form>
             </div>
           </div>
