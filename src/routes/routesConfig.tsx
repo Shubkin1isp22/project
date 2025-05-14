@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
 import SchedulePage from '../pages/SchedulePage';

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задача 20</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="button">Проверить</button>
+    <p id="result"></p>
+
+  <script>
+    const input = document.getElementById('input');
+    const button = document.getElementById('button');
+    const result = document.getElementById('result');
+
+    button.addEventListener('click', function() {
+        const numbers = input.value.split(',').map(num => num.trim()); // разбиваем строку по запятой
+        if (numbers.includes('13')) {
+            result.textContent = 'Число 13 есть!';
+        } else {
+            result.textContent = 'Числа 13 нет.';
+        }
+    });
+  </script>
+</body>
+</html>

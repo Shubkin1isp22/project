@@ -8,15 +8,15 @@ const Footer: React.FC = () => {
         {/* Награды */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
           <div className="flex flex-col items-center">
-            <img src="/images/award1.png" alt="Лучший сервис" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
+            <img src="http://localhost:8000/media/messages/award1.png" alt="Лучший сервис" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
           </div>
 
           <div className="flex flex-col items-center">
-            <img src="/images/award2.png" alt="Лучший флот" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
+            <img src="http://localhost:8000/media/messages/award2.png" alt="Лучший флот" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
           </div>
 
           <div className="flex flex-col items-center">
-            <img src="/images/award3.png" alt="Выбор путешественников" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
+            <img src="http://localhost:8000/media/messages/award3.png" alt="Выбор путешественников" className="w-20 h-20 aspect-[3.5/1] object-contain mb-2" />
           </div>
         </div>
 

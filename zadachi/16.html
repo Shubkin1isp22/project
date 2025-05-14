@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Разница между датами</title>
+</head>
+<body>
+  <input type="date" id="date1">
+  <input type="date" id="date2">
+  <p id="result">Задача 16</p>
+
+  <script>
+    const dateInput1 = document.getElementById('date1');
+    const dateInput2 = document.getElementById('date2');
+    const resultParagraph = document.getElementById('result');
+
+    function calculateDaysBetween() {
+      const date1 = new Date(dateInput1.value); //new Date превращает текстовую дату в объект Date
+      const date2 = new Date(dateInput2.value); //dateInput2.value - значение поля(2025-05-01)
+
+      
+      const diffTime = Math.abs(date2 - date1); // разница в миллисекундах, Math.abs - берёт модуль числа — чтобы результат всегда был положительным
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // переводим в дни, Math.ceil - округляет вверх до целого числа, чтобы даже неполный день считался как один
+      resultParagraph.textContent = `Между датами ${diffDays} дней.`;
+      
+    }
+
+    dateInput1.addEventListener('input', calculateDaysBetween);
+    dateInput2.addEventListener('input', calculateDaysBetween);
+  </script>
+</body>
+</html>

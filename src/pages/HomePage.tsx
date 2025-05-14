@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
     },
     {
       id: 2,
-      imageSrc: '/images/card1.png',
+      imageSrc: 'http://localhost:8000/media/messages/card1.png',
       title: 'Скандинавские фьорды',
       destination: 'Норвегия, Швеция, Дания',
       duration: '10 дней',
@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
     },
     {
       id: 3,
-      imageSrc: '/images/card2.png',
+      imageSrc: 'http://localhost:8000/media/messages/card2.png',
       title: 'Карибское приключение',
       destination: 'Багамы, Ямайка, Куба',
       duration: '12 дней',
@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
       <Header />
       
       {/* Hero секция */}
-      <section className="  bg-cruise-ship bg-cover bg-center text-white relative" style={{ backgroundImage: "url('/images/cruise-bg.jpg')" }} >
+      <section className="  bg-cruise-ship bg-cover bg-center text-white relative" style={{ backgroundImage: "url('http://localhost:8000/media/messages/cruise-bg.jpg')" }} >
         
         <div className="container-custom relative z-10 flex flex-col items-center justify-center min-h-[60vh]">
           <h1 className="text-4xl md:text-6xl font-serif text-center text-white  ">
@@ -127,21 +127,21 @@ const HomePage: React.FC = () => {
             <div className="flex gap-6 flex-wrap justify-start mb-12 mr-10 hidden md:flex">
               <div className="rounded-lg overflow-hidden shadow-md w-[90%] sm:w-[30%] md:w-[30%] h-auto">
                 <img 
-                  src="/images/pict1.png" 
+                  src="http://localhost:8000/media/messages/pict1.png" 
                   alt="Активный отдых"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md w-[90%] sm:w-[30%] md:w-[30%] h-auto">
                 <img 
-                  src="/images/pict2.jpg" 
+                  src="http://localhost:8000/media/messages/pict2.jpg" 
                   alt="Приключения"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md w-[90%] sm:w-[30%] md:w-[30%] h-auto">
                 <img 
-                  src="/images/pict3.jpg"  
+                  src="http://localhost:8000/media/messages/pict3.jpg"  
                   alt="Экстрим"
                   className="w-full h-full object-cover"
                 />
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
         </section>
       
         {/* Подписка */}
-        <section className="section bg-cruise-ship bg-cover bg-center relative" style={{ backgroundImage: 'url("/images/big.png")', height: 'auto' }}>
+        <section className="section bg-cruise-ship bg-cover bg-center relative" style={{ backgroundImage: 'url("http://localhost:8000/media/messages//big.png")', height: 'auto' }}>
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           <div className="container-custom relative z-10">
             <div className="bg-white bg-opacity-90 p-8 rounded-lg max-w-2xl mx-auto">

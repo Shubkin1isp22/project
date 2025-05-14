@@ -8,7 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Anchor } from 'lucide-react';
 
 const RegisterPage: React.FC = () => {
-  const { register: registerUser } = useAuth();
+  const { registerUser: registerUser } = useAuth();
   const navigate = useNavigate();
   
   const { 
@@ -21,8 +21,14 @@ const RegisterPage: React.FC = () => {
   const password = watch('password', '');
   
   const onSubmit = async (data: FieldValues) => {
+    const payload = {
+      name: data.username,       // преобразуем "username" -> "name"
+      email: data.email,
+      password: data.password,
+      password2: data.passwordConfirm,
+    };
     try {
-      await registerUser(data.name, data.email, data.password);
+      await registerUser(payload);
       navigate('/profile');
     } catch (error) {
       console.error('Ошибка регистрации:', error);
@@ -45,7 +51,7 @@ const RegisterPage: React.FC = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <FormInput
                 label="Имя"
-                name="name"
+                name="username"
                 register={register}
                 errors={errors}
                 validationRules={{

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задача 19</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <p id="output">Тут будет сумма</p>
+
+  <script>
+    let input = document.getElementById('input');
+    let output = document.getElementById('output');
+
+    input.addEventListener('blur', function() {
+        let text = input.value; // Берём текст из инпута
+        let parts = text.split(','); // Делим текст по запятым
+        let sum = 0; // Начальная сумма
+
+        for (let i = 0; i < parts.length; i++) {
+            let number = Number(parts[i].trim()); // Убираем пробелы и превращаем в число
+            sum += number; // Прибавляем к сумме
+        }
+
+        output.textContent = 'Сумма: ' + sum; // Выводим результат в абзац
+    });
+  </script>
+</body>
+</html>

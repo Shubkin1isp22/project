@@ -87,7 +87,7 @@ const AboutPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="card">
                 <img 
-                  src="/images/aurora.png" 
+                  src="http://localhost:8000/media/messages/aurora.png" 
                   alt="Port Majesty" 
                   className="card-image"
                 />
@@ -103,7 +103,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div className="card">
                 <img 
-                  src="https://images.pexels.com/photos/813011/pexels-photo-813011.jpeg" 
+                  src="http://localhost:8000/media/messages/pexel.jpeg" 
                   alt="Port Discovery II" 
                   className="card-image"
                 />
@@ -119,7 +119,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div className="card">
                 <img 
-                  src="https://images.pexels.com/photos/1270158/pexels-photo-1270158.jpeg" 
+                  src="http://localhost:8000/media/messages/pexel2.jpeg" 
                   alt="Port Elegance" 
                   className="card-image"
                 />

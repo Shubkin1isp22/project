@@ -19,9 +19,14 @@ const LoginPage: React.FC = () => {
   
   const onSubmit = async (data: FieldValues) => {
     try {
-      await login(data.email, data.password);
+      await login(data.username, data.password);
       navigate('/profile');
-    } catch (error) {
+    } catch (error: any) {
+      if (error.response?.status === 400) {
+        alert('Неверный email или пароль');
+      } else {
+        alert('Ошибка сервера. Попробуйте позже.');
+      }
       console.error('Ошибка входа:', error);
     }
   };
@@ -41,17 +46,13 @@ const LoginPage: React.FC = () => {
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <FormInput
-                label="Email"
-                name="email"
-                type="email"
+                label="Имя пользователя"
+                name="username"
+                type="text"
                 register={register}
                 errors={errors}
                 validationRules={{
-                  required: 'Email обязателен',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Неверный формат email'
-                  }
+                  required: 'Имя пользователя обязательно',
                 }}
               />
               
